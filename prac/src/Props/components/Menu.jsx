@@ -1,16 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Card from "./Card";
 
-function Menu({ siteName, some }) {
-  const { name, age, isMarried } = some;
-  const whiteTheme = false;
+function Menu() {
   return (
-    <div>
-      site Name:{siteName}
-      name people : {name}
-      his age : {age}
-      {isMarried ? <p>IsMarried</p> : <p>He is not married</p>}
-    </div>
+    <>
+      <Card></Card>
+    </>
   );
 }
-
 export default Menu;

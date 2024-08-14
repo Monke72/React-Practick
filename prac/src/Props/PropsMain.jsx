@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import Menu from "./components/Menu";
 import { Layout, Spin } from "antd";
 
-function PropsMain() {
-  const [spin, setSpin] = useState(true);
 
-  setTimeout(() => {
-    setSpin((prev) => !prev);
-  }, 2000);
+
+
+
+function PropsMain() {
+  const [spin, setSpin] = useState(false);
+
+
+
 
   const siteName = "LOcal coding";
   const some = {
@@ -16,7 +19,7 @@ function PropsMain() {
     isMarried: false,
   };
   return (
-    <Layout style={{ margin: 0, height: "100vh", color: "red" }}>
+    <Layout style={{ margin: 0, color: "red" }}>
       {spin ? (
         <Spin
           style={{
