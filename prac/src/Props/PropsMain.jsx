@@ -1,25 +1,13 @@
-import React, { useState } from "react";
-import Menu from "./components/Menu";
-import { Layout, Spin } from "antd";
-
-
-
-
+import React, { useContext, useEffect, useState } from "react";
+import { Spin } from "antd";
+import Cart from "./components/Cart";
+import ContextAll from "./components/Context";
 
 function PropsMain() {
-  const [spin, setSpin] = useState(false);
+  const { spin } = useContext(ContextAll);
 
-
-
-
-  const siteName = "LOcal coding";
-  const some = {
-    name: "aleks",
-    age: 32,
-    isMarried: false,
-  };
   return (
-    <Layout style={{ margin: 0, color: "red" }}>
+    <>
       {spin ? (
         <Spin
           style={{
@@ -30,9 +18,9 @@ function PropsMain() {
           }}
         ></Spin>
       ) : (
-        <Menu siteName={siteName} some={some}></Menu>
+        <Cart />
       )}
-    </Layout>
+    </>
   );
 }
 
